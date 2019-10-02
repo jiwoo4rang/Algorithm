@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,24 @@ using System.Windows.Shapes;
 
 namespace algorithm
 {
+    //IComparer는 비교를 위한 인터페이스다
+    public class XComparer : IComparer
+    {
+        public int Compare(object x, object y)
+        {
+            return (int) (((Point)x).X - ((Point)y).X);  
+        }
+    }
+
+    public class YComparer : IComparer
+    {
+        public int Compare(object x, object y)
+        {
+            return (int)(((Point)x).Y - ((Point)y).Y);
+        }
+    }
+
+
     public partial class MainWindow : Window
     {
         //점의 개수
@@ -32,7 +51,7 @@ namespace algorithm
 
         private void BtnCreate_Click(object sender, RoutedEventArgs e)
         {
-            canvas1.Children.Clear();  //?
+            canvas1.Children.Clear();  
             MakePointArray();
         }
 
@@ -60,37 +79,71 @@ namespace algorithm
 
         private void BtnFind_Click(object sender, RoutedEventArgs e)
         {
-            // 초기최솟값
-            double min = double.MaxValue;
+            //// 초기최솟값
+            //double min = double.MaxValue;
 
-            for (int i = 0; i < P; i++)
+            //for (int i = 0; i < P; i++)
+            //{
+            //    for (int j = i + 1; j < P; j++)
+            //    {
+            //        Point a = points[i];
+            //        Point b = points[j];
+
+            //        //점 사이의 거리
+            //        double d = Dist(a, b);
+
+            //        // d가 min 보다 작을 때
+            //        if (d < min)
+            //        {
+            //            // d, i, j를 저장
+            //            min = d;
+
+            //            myline.X1 = points[i].X;
+            //            myline.Y1 = points[i].Y;
+            //            myline.X2 = points[j].X;
+            //            myline.Y2 = points[j].Y;
+            //        }
+            //    }
+
+            //    }
+
+
+            //myline.Stroke = Brushes.Red;
+            //canvas1.Children.Add(myline);
+            //MessageBox.Show("최솟값은 " + min);
+
+            //Points[] 배열에 있는 점들을 x좌표 기준으로 정렬하여 출력하시오
+            //Array.sort() Test
+            //int[] a = new int[100];
+            //Random r = new Random();
+            //for(int i = 0; i < 100; i++)
+            //{
+            //    a[i] = r.Next(1000);
+            //}
+
+            //foreach (var v in a)
+            //{
+            //    Console.WriteLine(v);
+            //}
+            //Console.WriteLine("...After sort...");
+            //Array.Sort(a);
+            //foreach (var v in a)
+            //{
+            //    Console.WriteLine(v);
+            //}
+            IComparer xComp = new XComparer();
+            Array.Sort(points, xComp);
+            PrintPoints();
+            //Array.Sort(points, new YComparer());
+            //PrintPoints();
+        }
+
+        private void PrintPoints()
+        {
+            foreach(var p in points)
             {
-                for (int j = i + 1; j < P; j++)
-                {
-                    Point a = points[i];
-                    Point b = points[j];
-
-                    //점 사이의 거리
-                    double d = Dist(a, b);
-
-                    // d가 min 보다 작을 때
-                    if (d < min)
-                    {
-                        // d, i, j를 저장
-                        min = d;
-
-                        myline.X1 = points[i].X;
-                        myline.Y1 = points[i].Y;
-                        myline.X2 = points[j].X;
-                        myline.Y2 = points[j].Y;
-                    }
-                }
-                }
-          
-
-            myline.Stroke = Brushes.Red;
-            canvas1.Children.Add(myline);
-            MessageBox.Show("최솟값은 " + min);
+                Console.WriteLine(p.X + " " + p.Y);
+            }
         }
 
         private double Dist(Point i, Point j)
