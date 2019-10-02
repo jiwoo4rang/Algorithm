@@ -1,0 +1,15 @@
+C:\Users\user\Documents\GitHub\Algorithm\algorithm\algorithm\obj\Debug\algorithm.csprojAssemblyReference.cache
+C:\Users\user\Documents\GitHub\Algorithm\algorithm\algorithm\obj\Debug\MainWindow.g.cs
+C:\Users\user\Documents\GitHub\Algorithm\algorithm\algorithm\obj\Debug\App.g.cs
+C:\Users\user\Documents\GitHub\Algorithm\algorithm\algorithm\obj\Debug\algorithm_MarkupCompile.cache
+C:\Users\user\Documents\GitHub\Algorithm\algorithm\algorithm\obj\Debug\algorithm_MarkupCompile.lref
+C:\Users\user\Documents\GitHub\Algorithm\algorithm\algorithm\bin\Debug\algorithm.exe.config
+C:\Users\user\Documents\GitHub\Algorithm\algorithm\algorithm\bin\Debug\algorithm.exe
+C:\Users\user\Documents\GitHub\Algorithm\algorithm\algorithm\bin\Debug\algorithm.pdb
+C:\Users\user\Documents\GitHub\Algorithm\algorithm\algorithm\obj\Debug\MainWindow.baml
+C:\Users\user\Documents\GitHub\Algorithm\algorithm\algorithm\obj\Debug\algorithm.g.resources
+C:\Users\user\Documents\GitHub\Algorithm\algorithm\algorithm\obj\Debug\algorithm.Properties.Resources.resources
+C:\Users\user\Documents\GitHub\Algorithm\algorithm\algorithm\obj\Debug\algorithm.csproj.GenerateResource.cache
+C:\Users\user\Documents\GitHub\Algorithm\algorithm\algorithm\obj\Debug\algorithm.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\Algorithm\algorithm\algorithm\obj\Debug\algorithm.exe
+C:\Users\user\Documents\GitHub\Algorithm\algorithm\algorithm\obj\Debug\algorithm.pdb
