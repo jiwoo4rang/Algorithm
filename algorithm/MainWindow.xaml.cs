@@ -136,8 +136,30 @@ namespace algorithm
             PrintPoints();
             //Array.Sort(points, new YComparer());
             //PrintPoints();
+            ClosestPair CP = FindClosestPair(points, 0, 100 - 1);
         }
 
+        private ClosestPair FindClosestPair(Point[] points, int left, int right)
+        {
+            if(right-left <= 3)
+            {
+                AlgorithmN2();
+                int mid = left + (right - left) / 2;  //중앙점
+                ClosestPair CPL = FindClosestPair(points, left, mid);
+                ClosestPair CPR = FindClosestPair(points, mid+1, right);
+                double d = Math.Min(CPL.dist, CPR.dist);
+                ClosestPair CPC = FindMidRange(points, d);
+
+                return MinCP(CPL, CPR, CPC);
+
+            }
+        }
+
+        class ClosestPair
+        {
+            // 가장 가까운 거리, 두 점을 retuen 받을거임
+            
+        }
         private void PrintPoints()
         {
             foreach(var p in points)
@@ -150,7 +172,7 @@ namespace algorithm
         {
             // Math.Pow(x, 2) 사용, 또는 x*x
             // Math.Sqrt() 사용
-            //점 i와 j 각각의 x,y좌표를 알아야함z
+            //점 i와 j 각각의 x,y좌표를 알아야함
             double s = Math.Sqrt(Math.Pow(i.X - j.X, 2) + Math.Pow(i.Y - j.Y, 2));
             return s;
         }
